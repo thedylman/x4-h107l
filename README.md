@@ -23,3 +23,7 @@ To unlock the cpu run:
 openocd -f <interface.cfg> -c "transport select swd" -f ./openocd/mini51.cfg -c "init; halt; mini51 chip_erase; shutdown"
 ```
 
+To program the flash run:
+```bash
+openocd -f <interface.cfg> -c "transport select swd" -f ./openocd/mini51.cfg "program <path to elf> verify reset; shutdown"
+```
